@@ -1,0 +1,60 @@
+
+/*---------------------
+	Hero Section
+-----------------------*/
+
+.hero-section {
+	height: 900px;
+	padding-top: 260px;
+	display: block;
+	background-image: url("../img/hero-bg.png");
+	background-size: cover;
+	background-color: #f3f7f9;
+	background-position: right top;
+	background-repeat: no-repeat;
+	position: relative;
+	overflow: hidden;
+}
+
+.hero-section .laptop-image {
+	width: 685px;
+	max-width: none;
+	position: relative;
+	left: 80px;
+}
+
+.hero-text {
+	padding-top: 60px;
+}
+
+.hero-text h2 {
+	font-size: 70px;
+	margin-bottom: 35px;
+}
+
+.hero-text h2 span {
+	color: #16d0c5;
+}
+
+.hero-text h4 {
+	color: #75849a;
+	font-size: 22px;
+}
+
+.hero-subscribe-from {
+	margin-top: 50px;
+	display: block;
+}
+
+.hero-subscribe-from input {
+	width: 315px;
+	border: 1px solid #ebebeb;
+	background: #fff;
+	height: 48px;
+	padding: 0 25px;
+	border-radius: 50px;
+	font-family: "Futura", sans-serif;
+	font-size: 16px;
+	margin-right: 8px;
+	margin-bottom: 20px;
+}
