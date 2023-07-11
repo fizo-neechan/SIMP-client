@@ -1,6 +1,5 @@
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
 
-import env from "react-dotenv"
 import Index from './Pages/indexPage/Index';
 import './css/global.css';
 import './css/bootstrap.min.css'
@@ -13,6 +12,7 @@ import Company from './Pages/companyPage/Company';
 import SignUp from './Pages/signupPage/SignUp';
 import Login from './Pages/loginPage/Login';
 import axios from 'axios';
+import { Toaster } from 'react-hot-toast';
 
 axios.defaults.baseURL = "https://simp-api.onrender.com";
 
@@ -39,9 +39,46 @@ const router = createBrowserRouter(
   
   function App() {
 
-
     return (
-    <RouterProvider router={router} />
+      <>
+        <Toaster
+          position="top-right"
+          reverseOrder={false}
+          containerClassName='toaster'
+          toastOptions={{
+            style: {
+              padding: '1rem',
+              color: '#20509e',
+              width: "20rem",
+            },
+            iconTheme: {
+              primary: '#20509e',
+              secondary: '#FFFAEE',
+            },
+
+            error: {
+              style: {
+                color: "red",
+              },
+              iconTheme: {
+                primary: "red"
+              }
+            },
+
+            success: {
+              style: {
+                color: 'green',
+              },
+              iconTheme: {
+                primary: 'green'
+              }
+            }
+          }}
+        />
+
+        <RouterProvider router={router} />
+      </>
+
   );
 }
 

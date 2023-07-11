@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import {Link, useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import decreaseImage from '../img/decrease.png'
 import increaseImage from '../img/increase.png'
+import { toast } from 'react-hot-toast'
 
 const Table = () => {
 
@@ -11,7 +12,10 @@ const Table = () => {
     useEffect(() => {
         axios.get("/", {})
             .then(response => {
-                setStocks(response.data.data)
+                setStocks(response.data.data);
+            }).catch (err => {
+                toast.error("There seems to be an error fetching the data!\nPlease reload the page");
+                console.log(err);
             })
     }, [])
 

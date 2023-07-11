@@ -7,6 +7,7 @@ import './signUp.css'
 import axios from 'axios'
 import Cookies from 'js-cookie'
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-hot-toast'
 
 
 const schema = z.object({
@@ -38,8 +39,14 @@ const SignUp = () => {
                 email: vals.email,
                 password: vals.password
             }
-        }).then( (response) => {console.log(response)})
-        .catch( (err) => console.log(err));
+        }).then( (response) => {
+            toast.success("Registered Successfully")
+            console.log(response)
+        })
+        .catch( (err) => {
+            toast.error(err?.response?.data);
+            console.log(err)
+        });
     }
 
 

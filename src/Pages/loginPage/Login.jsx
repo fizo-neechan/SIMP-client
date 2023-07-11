@@ -5,6 +5,7 @@ import {z} from 'zod'
 import axios from 'axios'
 import Cookies from 'js-cookie'
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-hot-toast'
 
 
 const scehma = z.object({
@@ -26,9 +27,11 @@ const Login = () => {
                 password: vals.password,
             }
         }).then((response) => {
+            toast.success("Successfully Logged In");
             Cookies.set("auth_token", response.data.token, {expires: response.data.expires});
             navigate('/')
         }).catch(err => {
+            toast.error(err?.response?.data);
             console.log(err);
         })
     }

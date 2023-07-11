@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import StockAnalysis from './StockAnalysis'
 import Description from './Description'
 import News from './News'
+import { toast } from 'react-hot-toast'
 
 const Company = () => {
 
@@ -16,11 +17,11 @@ const Company = () => {
     useEffect(() => {
         axios.get(`/stocks/${companyName}`, {})
             .then(response => {
-                console.log(response.data);
                 setCompanyInformation(response.data.companyInformation);
                 setStocks(response.data.companyStocks);
                 setPrediction(response.data.stocksPrediction);
             }).catch(error => {
+                toast.error("There seems to be an error fetching the data!\nPlease reload the page");
                 console.log(error)
             })
     }, [])

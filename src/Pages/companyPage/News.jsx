@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { toast } from 'react-hot-toast'
 
 const News = () => {
     const [news, setNews] = useState([])
@@ -10,7 +11,6 @@ const News = () => {
         news.forEach(n => {
             netScore += Number(n.sentiment_score);
         });
-        console.log("score", netScore)
         return netScore;
     }
 
@@ -30,6 +30,7 @@ const News = () => {
                 setNews(response.data);
             })
             .catch(error => {
+                toast.error("There seems to be an error fetching the data!\nPlease reload the page");
                 console.log(error);
             })
 

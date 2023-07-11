@@ -11,6 +11,11 @@
 /* Template default CSS
 /*----------------------------------------*/
 
+
+.toaster {
+	margin-top: 5.5rem;
+}
+
 @font-face {
 	font-family: 'Futura';
 	src: url("../fonts/Futura.woff");

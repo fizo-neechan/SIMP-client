@@ -12,7 +12,6 @@ const StockAnalysis = ({companyName, prevStocks, predStocks}) => {
         const prev = []
         const pred = []
 
-        console.log("prev", prevStocks);
 
         // prevStocks.forEach((stock) => {
         //     prev.push({
